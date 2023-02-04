@@ -10,14 +10,14 @@
 <body>
   <div id="container">
   <div>
-    <h1 class="title" >Me da minha gorjeta</h1>
+    <h1 class="title" >Calculadora de Gorjeta</h1>
   </div>
-  <form class="tipsForm" >
+  <form class="tipsform" id="tipsform" >
     <label for="bill">
       <p>Quanto ficou a conta</p>
     </label>
     <p>
-      R$ <input type="number" placeholder="100" name="bill" id="bill" class="formInput">
+      R$ <input type="number" placeholder="100" name="bill" id="bill" class="formInput"  required>
     </p>
     <label for="serviceQual">
       <p>Como foi seu serviço</p>
@@ -37,10 +37,17 @@
       <p>Quantas pessoas vão dividir</p>
     </label>
       <p>
-        <input type="number" placeholder="1" name="people" id="people" class="formInput"> pessoas(s)
+        <input type="number" placeholder="1" name="people" id="people" class="formInput"> pessoa(s)
       </p>
-      <button type="submit"  class="formSubmit"  > Calcular </button>
+      <button type="submit"  class="formSubmit"> Calcular </button>
   </form>
+  <div id="totalTip"> 
+    Gorjeta total:
+    R$ <span id="tip">0.00</span>
+    <p id="each">cada</p>
   </div>
+</div>
+<script type="text/javascript" src="APP.js"></script>
+
 </body>
 </html>
