@@ -1,26 +1,32 @@
  function calculateTip(event){
   event.preventDefault();
-  let bill = document.getElementById('bill').Value;
-  let serviceQual = document.getElementById('serviceQual').Value;
-  let numOfPeople = document.getElementById('people').Value;
+  var bill = document.getElementById("bill");
+  var serviceQual = document.getElementById("serviceQual");
+  var people = document.getElementById("people");
 
-  if(bill == "" | serviceQual == 0){
+  var valorConta = bill.value;
+  var indiceQualidade = serviceQual.selectedIndex;
+  var opcaoQualidade = serviceQual.options[indiceQualidade];
+  var porcentagemGorjeta = opcaoQualidade.value;
+  var numPessoas = people.value;
+
+
+  if(valorConta == "" | serviceQual == 0){
     alert("Por favor, preencha os valores")
     return;
   }
 
-  if(numOfPeople == "" | numOfPeople <= 1){
-    numOfPeople = 1;
+  if(numPessoas == "" | numPessoas <= 1){
+    numPessoas = 1;
     document.getElementById('each').style.display = "none"
   }else{
     document.getElementById('each').style.display = "block"
   }
 
-  let total = (bill * serviceQual) / numOfPeople;
+  let total = (valorConta * porcentagemGorjeta) / numPessoas;
   total = total.toFixed(2);
   document.getElementById("tip").innerHTML = total;
   document.getElementById("totalTip").style.display = "block";
-
 }
 
 document.getElementById('totalTip').style.display = "none";
